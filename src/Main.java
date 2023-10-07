@@ -1,17 +1,29 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+
+import Stack.Stack;
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        Stack<Integer> sampleStackList = new Stack<Integer>(2);
+        sampleStackList.getSize();
+        sampleStackList.add(8);
+        sampleStackList.add(10);
+        sampleStackList.add(90);
+        sampleStackList.getSize();
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        int latestvalue =   sampleStackList.peak();
+        System.out.println("latestValue " + latestvalue);
+        sampleStackList.showList();
+        sampleStackList.removeItem();
+        sampleStackList.getSize();
+
+        sampleStackList.showList();
+        sampleStackList.getSize();
+
+        Stack<String> sampleStringStackList = new Stack<String>(2);
+
+        sampleStringStackList.add("driving");
+        sampleStringStackList.add("swimming");
+        sampleStringStackList.add("games");
+        sampleStringStackList.showList();
     }
 }

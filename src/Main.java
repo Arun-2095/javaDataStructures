@@ -12,8 +12,8 @@ public class Main {
 //        sampleStackList.getSize();
 
 //        Queue
-        Queue waitingQueue = new Queue(2);
-//
+        Queue<Integer> waitingQueue = new Queue(Integer.class,2);
+
         waitingQueue.enQueue(30);
         waitingQueue.enQueue(20);
         waitingQueue.enQueue(50);
@@ -24,6 +24,25 @@ public class Main {
         waitingQueue.enQueue(80);
 
         waitingQueue.printQueue();
-        System.out.println(waitingQueue.getsize() + " size");
+        System.out.println(waitingQueue.getSize() + " size");
+
+
+        Queue<String> messageQueue = new Queue(String.class,4);
+
+        messageQueue.enQueue("first");
+        messageQueue.enQueue("Second");
+        messageQueue.enQueue("Third");
+        messageQueue.enQueue("Fourth");
+
+        messageQueue.deQueue();
+        messageQueue.printQueue();
+
+        messageQueue.enQueue("Fifth");
+        messageQueue.printQueue();
+
+
+
+
+
     }
 }

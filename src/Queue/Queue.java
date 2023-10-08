@@ -1,9 +1,11 @@
 package Queue;
 
-public class Queue {
+import java.lang.reflect.Array;
+
+public class Queue<T> {
     final int capacity;
 
-    int[] queue;
+    T[] queue;
 
     int size = 0;
 
@@ -11,13 +13,13 @@ public class Queue {
 
     int rear = 0;
 
-    public  Queue(int size){
+    public  Queue(Class<T> dataType,  int size){
         capacity = size;
-        queue = new int[capacity];
+        queue = (T[]) Array.newInstance( dataType, size);
     }
 
 
-    public void enQueue(int value){
+    public void enQueue(T value){
         if(!isFull()) {
             queue[rear] = value;
             rear = (rear + 1) % capacity;
@@ -28,11 +30,11 @@ public class Queue {
     }
 
 
-    public Integer deQueue(){
+    public T deQueue(){
 
         if(!isEmpty()) {
-            int item = queue[front];
-            queue[front] = 0;
+            T item = queue[front];
+            queue[front] = null;
             front = (front + 1) % capacity;
             size--;
 
@@ -52,7 +54,7 @@ public class Queue {
         return size == capacity;
     }
 
-   public int getsize () {
+   public int getSize () {
         return size;
     }
 

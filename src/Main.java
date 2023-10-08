@@ -1,29 +1,29 @@
 
+import Queue.Queue;
 import Stack.Stack;
 public class Main {
     public static void main(String[] args) {
 
-        Stack<Integer> sampleStackList = new Stack<Integer>(2);
-        sampleStackList.getSize();
-        sampleStackList.add(8);
-        sampleStackList.add(10);
-        sampleStackList.add(90);
-        sampleStackList.getSize();
+//        Stack<Integer> sampleStackList = new Stack<Integer>(2);
+//        sampleStackList.getSize();
+//        sampleStackList.add(8);
+//        sampleStackList.add(10);
+//        sampleStackList.add(90);
+//        sampleStackList.getSize();
 
-        int latestvalue =   sampleStackList.peak();
-        System.out.println("latestValue " + latestvalue);
-        sampleStackList.showList();
-        sampleStackList.removeItem();
-        sampleStackList.getSize();
+//        Queue
+        Queue waitingQueue = new Queue(2);
+//
+        waitingQueue.enQueue(30);
+        waitingQueue.enQueue(20);
+        waitingQueue.enQueue(50);
+        System.out.println(waitingQueue.deQueue() +" dequeue value");
+        waitingQueue.enQueue(60);
 
-        sampleStackList.showList();
-        sampleStackList.getSize();
+        System.out.println(waitingQueue.deQueue() +" dequeue value");
+        waitingQueue.enQueue(80);
 
-        Stack<String> sampleStringStackList = new Stack<String>(2);
-
-        sampleStringStackList.add("driving");
-        sampleStringStackList.add("swimming");
-        sampleStringStackList.add("games");
-        sampleStringStackList.showList();
+        waitingQueue.printQueue();
+        System.out.println(waitingQueue.getsize() + " size");
     }
 }
